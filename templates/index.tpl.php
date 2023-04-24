@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+<?php if(file_exists('./logicals/'.$find['file'].'.php')) { include("./logicals/{$find['file']}.php"); } ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,16 +13,19 @@
 		<img src="./images/<?=$header['imagesource']?>" alt="<?=$header['imagealt']?>">
 		<h1><?= $header['title'] ?></h1>
 		<?php if (isset($header['motto'])) { ?><h2><?= $header['motto'] ?></h2><?php } ?>
+		<?php if(isset($_SESSION['user'])) { ?>Logged in: <strong><?= $_SESSION['user']." ".$_SESSION['fn']." (".$_SESSION['ln'].")" ?></strong><?php } ?>
 	</header>
     <div id="wrapper">
         <aside id="nav">
             <nav>
                 <ul>
 					<?php foreach ($pages as $url => $page) { ?>
-						<li<?= (($page == $find) ? ' class="active"' : '') ?>>
-						<a href="index.php<?= ($url == '/') ? '' : ('?page=' . $url) ?>">
-						<?= $page['text'] ?></a>
-						</li>
+						<?php if(! isset($_SESSION['user']) && $page['menun'][0] || isset($_SESSION['user']) && $page['menun'][1]) { ?>
+							<li<?= (($page == $find) ? ' class="active"' : '') ?>>
+							<a href="<?= ($url == '/') ? '.' : ('?page=' . $url) ?>">
+							<?= $page['text'] ?></a>
+							</li>
+						<?php } ?>
 					<?php } ?>
                 </ul>
             </nav>
