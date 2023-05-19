@@ -11,6 +11,10 @@
 		<img src="./images/<?=$header['imagesource']?>" alt="<?=$header['imagealt']?>">
 		<h1><?= $header['title'] ?></h1>
 		<?php if (isset($header['motto'])) { ?><h2><?= $header['motto'] ?></h2><?php } ?>
+<<<<<<< Updated upstream
+=======
+		<?php if(isset($_SESSION['user'])) { ?>Logged in: <strong><?= $_SESSION['fn']." ".$_SESSION['ln']." (".$_SESSION['user'].")" ?></strong><?php } ?>
+>>>>>>> Stashed changes
 	</header>
     <div id="wrapper">
         <aside id="nav">

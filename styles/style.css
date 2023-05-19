@@ -1,8 +1,9 @@
 header {
     border-radius: 10px;
-    background-color: yellow;
+    background-color: rgba(255,246,233,255);
     padding: 10px;
     margin: 10px;
+    color: rgb(0, 0, 0);
 }
 header img {
     float: left;
@@ -19,7 +20,7 @@ nav {
     margin: 0px 10px 0px 0px;
     top: 0px;
     border-radius: 10px;
-    background-color: #FF6600;
+    background-color:rgb(219, 185, 121);
 }
 nav ul {
     list-style-type: none;
@@ -30,17 +31,17 @@ nav ul li {
     padding: 0px 15px;;
 }
 nav ul li.active {
-    border-right: 5px solid blue;
+    border-right: 5px solid rgb(26, 26, 26);
 }
 nav ul a {
     text-decoration: none;
-    color: blue;
+    color: rgb(26, 26, 26);
 }
 div#content {
     display: table-cell;
     width: 100%;
     border-radius: 10px;
-    background-color: #99FFCC;
+    background-color: rgb(235, 207, 172);
     padding: 15px;
 }
 div#content img{
@@ -49,11 +50,16 @@ div#content img{
     height: auto;
     margin: 0 0 15px 15px;
     padding: 3px;
-    border: 3px solid blue;
+    border: 3px solid rgb(70, 47, 26);
 }
 footer {
     border-radius: 10px;
     margin: 10px;
     padding: 5px 20px;
-    background-color: #CC99FF;
+    background-color: #3a3326;
+    color: whitesmoke;
+}
+body
+{
+    background-color: rgb(235, 207, 172);
 }
